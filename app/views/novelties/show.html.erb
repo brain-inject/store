@@ -1,0 +1,18 @@
+  <section>
+    <div class="row">    
+      <div class="col-sm-8 col-sm-offset-2">
+        <div class="novelty_single">
+            <h2><%= @novelty.name %></h2>
+            <h3><%= @novelty.sale_message %></h3>
+
+            <p>Price: <%= number_to_currency(@novelty.price.to_i) %></p>
+            <p>Tax: <%= number_to_currency(@tax) %></p>
+            <p>Total: <%= number_to_currency(@total) %></p>
+            <img src="<%= @novelty.image %>" alt="<%= @novelty.name %>" class="img-responsive">
+            <p>Description: <%= @novelty.description %></p>
+            <%= link_to "Edit", "/novelties/#{@novelty.id}/edit", class: "btn btn-success" %>
+            <%= link_to "Delete", "/novelties/#{@novelty.id}", {method: :delete, class: "btn btn-danger" }%>
+        </div>
+      </div>
+    </div>
+  </section>

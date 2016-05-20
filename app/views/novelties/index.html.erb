@@ -1,0 +1,18 @@
+    <section>
+      <div class="row">
+
+        <% @novelties.each do |novelty| %>
+
+          <div class="col-sm-4">
+            <div class="novelty_single">
+              <h2><%= novelty.name %></h2>
+              <p>Price: <%= novelty.price %></p>
+              <a href="/novelties/<%= novelty.id %>" title="View Novelty"><img src="<%= novelty.image %>" alt="<%= novelty.name %>" class="img-responsive novelty_single_image"></a>
+              <p>Description: <%= novelty.description %></p>
+            </div>
+          </div>
+        <% end %>
+
+      </div>
+    </section>
+  

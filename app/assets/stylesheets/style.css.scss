@@ -1,0 +1,65 @@
+ html,body{
+  background: #8B5F49 url(http://www.myfreetextures.com/wp-content/uploads/2013/07/old-brown-vintage-parchment-paper-texture.jpg) no-repeat top;
+    background-size: cover;
+ }
+ header{
+  margin-bottom:5%;
+ }
+ .navbar-default{
+  background: transparent;
+  border:none;
+ }
+ .navbar-default .navbar-nav > li > a {
+  color: #73152D;
+  font-size: 200%;
+}
+ .container-fluid{
+  padding:0 5%;
+ }
+ h1{
+  font-family: 'Love Ya Like A Sister', cursive;
+  font-size: 12vw;
+  color:#73152D;
+ }
+ @media all and (min-width: 768px){
+   h1{
+    font-size: 6vw;
+   }
+}
+header h1{
+  text-align: center;
+}
+ h2{
+  font-family: 'Love Ya Like A Sister', cursive;
+  font-size: 7vw;
+  line-height: 1.25;
+  color:#73152D;
+ }
+ @media all and (min-width: 768px){
+   h2{
+    font-size: 2.5vw;
+   }
+}
+ .rating{
+  color:#73152D;
+ }
+ a{
+  color:#1A1830;
+ }
+ input{
+  color:#333;
+ }
+ .novelty_single{
+  background: #8B5F49;
+  background:rgba(139,95,73,0.5);
+  padding:0 15px 15px 15px;
+  color:#FFF;
+  box-shadow: 0 3px 3px rgba(0,0,0,0.35);
+  min-height: 550px;
+ }
+ .novelty_single_image{
+  margin-bottom: 20px;
+ }
+ .btn{
+  margin-top:20px;
+ }

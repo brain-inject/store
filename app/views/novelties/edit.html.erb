@@ -1,0 +1,35 @@
+<section>
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+      <div class="novelty_single">
+        <h1>Edit Novelty</h1>
+
+        <%= form_tag "/novelties/#{@novelty.id}", method: :patch do %>
+
+          <div>
+            <%= label_tag :name %>
+            <%= text_field_tag :name, @novelty.name %>
+          </div>
+          
+          <div>
+            <%= label_tag :price %>
+            <%= text_field_tag :price, @novelty.price %>
+          </div>
+          
+          <div>
+            <%= label_tag :image %>
+            <%= text_field_tag :image, @novelty.image %>
+          </div>
+          
+          <div>
+            <%= label_tag :description %>
+            <%= text_field_tag :description, @novelty.description %>
+          </div>
+          
+          <%= submit_tag "Update Novelty" %>
+
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
