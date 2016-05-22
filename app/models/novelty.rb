@@ -1,5 +1,8 @@
 class Novelty < ActiveRecord::Base
 
+  belongs_to :supplier
+  has_many :images
+
   TAXRATE = 0.09
 
   def sale_message
@@ -16,5 +19,9 @@ class Novelty < ActiveRecord::Base
 
   def total
     tax + price.to_i
+  end
+
+  def image_preview_url
+    images.first.url
   end
 end
