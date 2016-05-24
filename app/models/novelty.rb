@@ -2,6 +2,7 @@ class Novelty < ActiveRecord::Base
 
   belongs_to :supplier
   has_many :images
+  has_many :orders
 
   TAXRATE = 0.09
 

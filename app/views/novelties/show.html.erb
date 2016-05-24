@@ -14,7 +14,20 @@
             <% end %>
 
             <p>Description: <%= @novelty.description %></p>
-            <h6>Supplier: <%= @novelty.supplier %></h6>
+            
+            <h2>How many would you like to buy?</h2>
+
+            <%= form_tag '/orders', method: :post do %>
+              <div>
+                <%= label_tag :quantity %>
+                <%= text_field_tag :quantity %>
+              </div>
+              <%= hidden_field_tag :novelty_id, @novelty.id %>
+
+              <%= submit_tag 'Buy Now!', class: "btn btn-default" %>
+            <% end %>
+
+            <h6>Supplier: <%= @novelty.supplier.name %></h6>
             <%= link_to "Edit", "/novelties/#{@novelty.id}/edit", class: "btn btn-success" %>
             <%= link_to "Delete", "/novelties/#{@novelty.id}", {method: :delete, class: "btn btn-danger" }%>
         </div>

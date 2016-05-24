@@ -1,0 +1,12 @@
+<h1>Your Order</h1>
+
+<h3>Order Number: <%= @order.id %></h3>
+<h3>Customer: <%= @order.user.email %></h3>
+<h3>Product: <%= @novelty.name %></h3>
+<h3>Quantity: <%= @order.quantity %></h3>
+<br>
+<h3>Subtotal: <%= number_to_currency(@order.subtotal) %></h3>
+<h3>Tax: <%= number_to_currency(@order.tax) %></h3>
+<h3>Total: <%= number_to_currency(@order.total) %></h3>
+
+<%= image_tag @novelty.image_preview_url %>

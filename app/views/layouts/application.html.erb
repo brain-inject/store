@@ -39,7 +39,12 @@
             <li><a href="/novelties/random">Random</a></li>
             <li><a href="#">Link</a></li>
             <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
+            <% if current_user %>
+              <li><%= link_to 'Sign Out', '/users/sign_out', method: :delete %></li>
+            <% else %>
+              <li><%= link_to 'Sign In', '/users/sign_in' %></li>
+              <li><%= link_to 'Sign Up', '/users/sign_up' %></li>
+            <% end %>
           </ul>
         </li>
       </ul>
