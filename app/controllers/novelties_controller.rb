@@ -5,6 +5,11 @@ class NoveltiesController < ApplicationController
     sort_attribute = params[:sort]
     sort_order = params[:sort_order]
     discount_value = params[:discount]
+    category_type = params[:category]
+
+    if category_type
+      @novelties = Category.find_by(name: category_type).novelties
+    end
 
     if discount_value
       @novelties = @novelties.where("price < ?", discount_value)

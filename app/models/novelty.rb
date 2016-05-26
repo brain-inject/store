@@ -1,6 +1,8 @@
 class Novelty < ActiveRecord::Base
 
   belongs_to :supplier
+  has_many :categorized_novelties
+  has_many :categories, through: :categorized_novelties
   has_many :images
   has_many :orders
 
