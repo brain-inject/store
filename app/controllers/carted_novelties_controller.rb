@@ -1,5 +1,7 @@
 class CartedNoveltiesController < ApplicationController
   
+  before_action :authenticate_user!
+
   def index
     if user_signed_in? && current_user.carted_items.count > 0
       @cart = current_user.carted_items
@@ -29,3 +31,7 @@ class CartedNoveltiesController < ApplicationController
     redirect_to '/cart'
   end
 end
+
+
+
+

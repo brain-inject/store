@@ -1,5 +1,7 @@
 User.create!([
-  {email: "joe@gmail.com", password: "password", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 2, current_sign_in_at: "2016-05-28 23:31:42", last_sign_in_at: "2016-05-23 23:24:20", current_sign_in_ip: "::1", last_sign_in_ip: "::1"}
+  {email: "joe@gmail.com", password: "password", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 2, current_sign_in_at: "2016-05-28 23:31:42", last_sign_in_at: "2016-05-23 23:24:20", current_sign_in_ip: "::1", last_sign_in_ip: "::1"},
+  {email: "jackson@gmail.com", password: "password", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 2, current_sign_in_at: "2016-05-28 23:31:42", last_sign_in_at: "2016-05-23 23:24:20", current_sign_in_ip: "::1", last_sign_in_ip: "::1"},
+  {email: "admin@nerd.com", password: "password", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 2, current_sign_in_at: "2016-05-28 23:31:42", last_sign_in_at: "2016-05-23 23:24:20", current_sign_in_ip: "::1", last_sign_in_ip: "::1", admin: true}
 ])
 CategorizedNovelty.create!([
   {novelty_id: 1, category_id: 1},
@@ -47,18 +49,6 @@ Novelty.create!([
   {name: "Sonic Screwdriver", description: "The Doctor's sciencey magic wand to get out of tight spots. Note: does not work on wood", price: 9, supplier_id: 3},
   {name: "Space Cowboy Laser Gun", description: "This weapon has no other description than, Shiney!", price: 170, supplier_id: 2},
   {name: "Hitchhiker's Guide to the Galexy", description: "In many of the more relaxed civilizations on the Outer Eastern Rim of the Galaxy, the Hitch-Hiker's Guide has already supplanted the great Encyclopaedia Galactica as the standard repository of all knowledge and wisdom, for though it has many omissions and contains much that is apocryphal, or at least wildly inaccurate, it scores over the older, more pedestrian work in two important respects. First, it is slightly cheaper; and secondly it has the words DON'T PANIC inscribed in large friendly letters on its cover.", price: 42, supplier_id: 2}
-])
-Order.create!([
-  {user_id: 1, quantity: 1, subtotal: nil, tax: nil, total: nil, novelty_id: 3},
-  {user_id: 1, quantity: 2, subtotal: 340.0, tax: 15.3, total: 355.3, novelty_id: 5},
-  {user_id: 1, quantity: 5, subtotal: 45.0, tax: 0.81, total: 45.81, novelty_id: 4},
-  {user_id: 1, quantity: 3, subtotal: nil, tax: nil, total: nil, novelty_id: 3},
-  {user_id: 1, quantity: 2, subtotal: nil, tax: nil, total: nil, novelty_id: 1},
-  {user_id: 1, quantity: 2, subtotal: nil, tax: nil, total: nil, novelty_id: 1},
-  {user_id: 1, quantity: 2, subtotal: 540.0, tax: nil, total: nil, novelty_id: 1},
-  {user_id: 1, quantity: 4, subtotal: 1080.0, tax: 97.2, total: 1177.2, novelty_id: 1},
-  {user_id: 1, quantity: 2, subtotal: 114.0, tax: 10.26, total: 124.26, novelty_id: 3},
-  {user_id: 1, quantity: 2, subtotal: 540.0, tax: 48.6, total: 588.6, novelty_id: 1}
 ])
 Supplier.create!([
   {name: "Joe's Geek Shack", email: "jumpinjoe@aol.com", phone: "567-555-0101"},

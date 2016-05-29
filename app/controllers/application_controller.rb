@@ -13,4 +13,10 @@ class ApplicationController < ActionController::Base
         @cart_count = 0
       end
     end
+
+    def authenticate_admin!
+      unless user_signed_in? && current_user.admin
+        redirect_to '/'
+      end
+    end
 end

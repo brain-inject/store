@@ -1,4 +1,7 @@
 class NoveltiesController < ApplicationController
+
+  before_action :authenticate_admin!, only: [:new, :create, :edit, :update, :destroy]
+
   def index
     @novelties = Novelty.all
     sort_attribute = params[:sort]
@@ -72,6 +75,8 @@ class NoveltiesController < ApplicationController
     novelty = Novelty.all.sample
     redirect_to "/novelties/#{novelty.id}"
   end
+
+
 end
 
 
