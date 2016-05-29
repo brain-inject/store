@@ -5,4 +5,9 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :orders
+  has_many :carted_novelties
+
+  def carted_items
+    carted_novelties.where(status: 'carted')
+  end
 end

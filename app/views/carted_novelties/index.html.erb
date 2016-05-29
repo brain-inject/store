@@ -1,0 +1,8 @@
+<h1><%= current_user.email %>'s Cart</h1>
+
+<% @cart.each do |cart_item| %>
+  <h3><%= cart_item.novelty.name %> - <%= cart_item.quantity %> x <%= number_to_currency(cart_item.novelty.price) %> : 
+  <%= link_to 'Remove', "/carted_novelties/#{cart_item.id}", method: :delete %></h3>
+<% end %>
+
+<%= link_to 'Buy Now!', '/orders', method: :post, class: "btn btn-default" %>

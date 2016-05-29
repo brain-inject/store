@@ -4,7 +4,9 @@ class Novelty < ActiveRecord::Base
   has_many :categorized_novelties
   has_many :categories, through: :categorized_novelties
   has_many :images
-  has_many :orders
+
+  has_many :carted_novelties
+  has_many :orders, through: :carted_novelties
 
   TAXRATE = 0.09
 

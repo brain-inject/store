@@ -15,16 +15,23 @@
 
             <p>Description: <%= @novelty.description %></p>
             
+            <h4>Categories: </h4>
+            <ul>
+              <% @novelty.categories.each do |category| %>
+                <li><%= category.name %></li>
+              <% end %>
+            </ul>
+
             <h2>How many would you like to buy?</h2>
 
-            <%= form_tag '/orders', method: :post do %>
+            <%= form_tag '/carted_novelties', method: :post do %>
               <div>
                 <%= label_tag :quantity %>
                 <%= text_field_tag :quantity %>
               </div>
               <%= hidden_field_tag :novelty_id, @novelty.id %>
 
-              <%= submit_tag 'Buy Now!', class: "btn btn-default" %>
+              <%= submit_tag 'Add to Cart', class: "btn btn-default" %>
             <% end %>
 
             <h6>Supplier: <%= @novelty.supplier.name %></h6>

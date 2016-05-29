@@ -32,7 +32,11 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><%= link_to "New Novelty", "novelties/new" %></li>
+
+            <% if user_signed_in? && current_user.admin %>
+              <li><%= link_to "New Novelty", "novelties/new" %></li>
+            <% end %>
+          
             <li><a href="/?sort=price">Price: Lowest to Highest</a></li>
             <li><a href="/?sort=price&sort_order=desc">Price: Highest to Lowest</a></li>
             <li><a href="/?discount=100">Discount Items</a></li>
@@ -45,6 +49,7 @@
             <li class="divider"></li>
             <% if current_user %>
               <li><%= link_to 'Sign Out', '/users/sign_out', method: :delete %></li>
+              <li><%= link_to "Cart (#{@cart_count})", "/cart" %></li>
             <% else %>
               <li><%= link_to 'Sign In', '/users/sign_in' %></li>
               <li><%= link_to 'Sign Up', '/users/sign_up' %></li>
@@ -58,7 +63,7 @@
 </header>
 <div class="container">
 <% flash.each do |name, message| %>
-  <div class="alert alert-<%= name %> alert-dismissible" role="alert">
+  <div class="alert alert-<%= name != "notice" ? name : "success" %> alert-dismissible" role="alert">
     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><p><%= message %></p>
   </div>
   <% end %>

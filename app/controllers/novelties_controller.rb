@@ -1,6 +1,5 @@
 class NoveltiesController < ApplicationController
   def index
-
     @novelties = Novelty.all
     sort_attribute = params[:sort]
     sort_order = params[:sort_order]
@@ -29,10 +28,11 @@ class NoveltiesController < ApplicationController
     @novelty = Novelty.create(
       name: params[:name],
       description: params[:description],
-      image: params[:image],
       price: params[:price]
       )
 
+    Image.create(url: params[:image], novelty_id: @novelty.id) if params[:image] != ""
+    
     flash[:success] = "Novelty Created"
     redirect_to "/novelties/#{@novelty.id}"
   end
@@ -53,7 +53,6 @@ class NoveltiesController < ApplicationController
     @novelty.update(
       name: params[:name],
       description: params[:description],
-      image: params[:image],
       price: params[:price]
       )
 
@@ -74,4 +73,14 @@ class NoveltiesController < ApplicationController
     redirect_to "/novelties/#{novelty.id}"
   end
 end
+
+
+
+
+
+
+
+
+
+
 
