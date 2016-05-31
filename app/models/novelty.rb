@@ -1,5 +1,14 @@
 class Novelty < ActiveRecord::Base
 
+  validates :name, presence: true
+  validates :name, uniqueness: true
+
+  validates :description, presence: true
+  validates :description, length: { maximum: 200 }
+
+  validates :price, numericality: true
+  validates :price, presence: true
+
   belongs_to :supplier
   has_many :categorized_novelties
   has_many :categories, through: :categorized_novelties

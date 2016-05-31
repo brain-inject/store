@@ -25,19 +25,24 @@ class NoveltiesController < ApplicationController
   end
 
   def new
+    @novelty = Novelty.new
   end
 
   def create
-    @novelty = Novelty.create(
+    @novelty = Novelty.new(
       name: params[:name],
       description: params[:description],
       price: params[:price]
       )
 
-    Image.create(url: params[:image], novelty_id: @novelty.id) if params[:image] != ""
-    
-    flash[:success] = "Novelty Created"
-    redirect_to "/novelties/#{@novelty.id}"
+    if @novelty.save
+      Image.create(url: params[:image], novelty_id: @novelty.id) if params[:image] != ""
+      
+      flash[:success] = "Novelty Created"
+      redirect_to "/novelties/#{@novelty.id}"
+    else
+      render :new
+    end
   end
 
   def show
@@ -53,14 +58,18 @@ class NoveltiesController < ApplicationController
 
   def update
     @novelty = Novelty.find_by(id: params[:id])
-    @novelty.update(
-      name: params[:name],
-      description: params[:description],
-      price: params[:price]
-      )
 
-    flash[:success] = "Novelty Updated"
-    redirect_to "/novelties/#{@novelty.id}"
+    if @novelty.update(
+                      name: params[:name],
+                      description: params[:description],
+                      price: params[:price]
+                      )
+
+      flash[:success] = "Novelty Updated"
+      redirect_to "/novelties/#{@novelty.id}"
+    else
+      render :edit
+    end
   end
 
   def destroy
