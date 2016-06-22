@@ -8,7 +8,12 @@ class ApplicationController < ActionController::Base
   private
     def calculate_cart_count
       if user_signed_in?
-        @cart_count = current_user.carted_items.count
+        if session[:cart_count]
+          @cart_count = session[:cart_count]
+        else
+          @cart_count = current_user.carted_items.count
+          session[:cart_count] = @cart_count
+        end
       else
         @cart_count = 0
       end

@@ -48,7 +48,7 @@ Novelty.create!([
   {name: "DnD Dice set", description: "Take down mighty dragons with this timeless set of 20 sided wonders", price: 57, supplier_id: 1},
   {name: "Sonic Screwdriver", description: "The Doctor's sciencey magic wand to get out of tight spots. Note: does not work on wood", price: 9, supplier_id: 3},
   {name: "Space Cowboy Laser Gun", description: "This weapon has no other description than, Shiney!", price: 170, supplier_id: 2},
-  {name: "Hitchhiker's Guide to the Galexy", description: "In many of the more relaxed civilizations on the Outer Eastern Rim of the Galaxy, the Hitch-Hiker's Guide has already supplanted the great Encyclopaedia Galactica as the standard repository of all knowledge and wisdom, for though it has many omissions and contains much that is apocryphal, or at least wildly inaccurate, it scores over the older, more pedestrian work in two important respects. First, it is slightly cheaper; and secondly it has the words DON'T PANIC inscribed in large friendly letters on its cover.", price: 42, supplier_id: 2}
+  {name: "Hitchhiker's Guide to the Galexy", description: "In many of the more relaxed civilizations on the Outer Eastern Rim of the Galaxy, the Hitch-Hiker's Guide has already supplanted the great Encyclopaedia Galactica as the standard repository of all knowledge and wisdom.", price: 42, supplier_id: 2}
 ])
 Supplier.create!([
   {name: "Joe's Geek Shack", email: "jumpinjoe@aol.com", phone: "567-555-0101"},

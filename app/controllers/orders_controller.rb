@@ -14,6 +14,7 @@ class OrdersController < ApplicationController
     @order.calculate_figures(@order.carted_novelties)
     @order.save
 
+    session[:cart_count] = nil
     flash[:success] = "Order Created"
     redirect_to "/orders/#{@order.id}"
   end

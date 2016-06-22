@@ -4,7 +4,7 @@ class Novelty < ActiveRecord::Base
   validates :name, uniqueness: true
 
   validates :description, presence: true
-  validates :description, length: { maximum: 200 }
+  validates :description, length: { maximum: 500 }
 
   validates :price, numericality: true
   validates :price, presence: true

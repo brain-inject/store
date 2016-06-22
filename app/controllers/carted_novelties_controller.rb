@@ -19,6 +19,7 @@ class CartedNoveltiesController < ApplicationController
       status: "carted"
       )
 
+    session[:cart_count] = nil
     flash[:success] = "Item added to cart"
     redirect_to "/cart"
   end
@@ -27,6 +28,7 @@ class CartedNoveltiesController < ApplicationController
     @carted_novelty = CartedNovelty.find(params[:id])
     @carted_novelty.update(status: "removed")
 
+    session[:cart_count] = nil
     flash[:success] = "Removed Item"
     redirect_to '/cart'
   end
